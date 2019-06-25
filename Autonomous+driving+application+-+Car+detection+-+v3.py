@@ -259,7 +259,7 @@ yolo_outputs = yolo_head(yolo_model.output, anchors, len(class_names))
 # with their scores, box coordinates and classes
 scores, boxes, classes = yolo_eval(yolo_outputs, image_shape)
 
-out_scores, out_boxes, out_classes = predict(sess, "test.jpg")
+out_scores, out_boxes, out_classes = predict(sess, "0031.jpg")
 
 # The model you've just run is actually able to detect 80 different classes listed in "coco_classes.txt".
 # To test the model on your own images:
