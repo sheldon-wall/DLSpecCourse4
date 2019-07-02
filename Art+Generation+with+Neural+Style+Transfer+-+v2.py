@@ -328,7 +328,7 @@ my_date, _ = str(datetime.datetime.now()).split('.')
 my_date = my_date.replace(':', '')
 generate_image(content_dir, style_loc, save_loc, content_pic, style_pic,
                my_date=my_date, save_image=True,
-               alpha=40, beta=10, noise=.3, depth='shallow')
+               alpha=40, beta=10, noise=.6, depth='shallow')
 
 # generate the selected content against all number of different styles
 # for all possible hyper-parameters
