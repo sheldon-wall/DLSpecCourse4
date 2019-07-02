@@ -12,6 +12,7 @@ from nst_utils import *
 import numpy as np
 import tensorflow as tf
 import datetime
+import imageio as io
 
 def compute_content_cost(a_C, a_G):
     """
@@ -253,7 +254,8 @@ def generate_image(content_loc, save_loc, style_loc, content_pic, style_pic, my_
     # Start interactive session
     sess = tf.InteractiveSession()
 
-    content_image = scipy.misc.imread(os.path.join(content_loc, content_pic))
+#    content_image = scipy.misc.imread(os.path.join(content_loc, content_pic))
+    content_image = io.imread(os.path.join(content_loc, content_pic))
     content_image = scipy.misc.imresize(content_image, (600, 800))
     content_image = reshape_and_normalize_image(content_image)
 
