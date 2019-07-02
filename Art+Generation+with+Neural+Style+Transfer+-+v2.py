@@ -315,18 +315,11 @@ def generate_image(content_loc, save_loc, style_loc, content_pic, style_pic, my_
 
     return generated_image
 
-# Set the data location
-data_loc = "E:\Data Science\Data\\Neural Style Transfer Images"
-input_loc = os.path.join(data_loc, "\\Input")
-save_loc = "E:\Pictures\\NST"
-
 # Set the possible hyperparameters
 alpha_beta_list = ((10, 40))
 noise_list = (.3, .7)
 #depth_list = ('broad','deep','normal','middle','shallow')
 depth_list = ('broad','normal','shallow')
-style_files_list = os.listdir(data_loc)
-content_files_list = os.listdir(data_loc)
 
 # Let's load, reshape, and normalize our "content" image (the Louvre museum picture):
 #content_pic = "P1010340.jpg"  # tree blurring coast
@@ -339,16 +332,22 @@ content_files_list = os.listdir(data_loc)
 #content_pic = "P1010364.jpg"  # ocean and sun
 #content_pic = "IMG_5127.jpg"  # lighthouse at night
 #content_pic = "-814DSC_7527.jpg"  # tavis and kristen
-#content_pic = "P1010420.jpg"   # stream
+content_pic = "P1010420.jpg"   # stream
 #content_pic = "P1010430.JPG"   # pond
-content_pic = "20180914_033952327_iOS.jpg"  #sunset
+#content_pic = "20180914_033952327_iOS.jpg"  #sunset
 
 # generate a single style
+# Set the data location
+content_loc = "C:\\NST\\Input"
+content_pic = "IMG_0349.jpg"
+style_loc = "styles\\"
+style_pic = "Aztec 1.jpg"
+save_loc = "C:\\NST\\Completed"
 my_date, _ = str(datetime.datetime.now()).split('.')
 my_date = my_date.replace(':', '')
-style_pic = "Style Abstract.jpg"
-generate_image(data_loc, content_pic, style_pic, my_date=my_date, save_image=True,
-                       alpha=10, beta=80, noise=.3, depth='normal')
+generate_image(content_loc, style_loc, save_loc, content_pic, style_pic,
+               my_date=my_date, save_image=True,
+               alpha=10, beta=80, noise=.3, depth='normal')
 
 # generate the selected content against all number of different styles
 # for all possible hyper-parameters
