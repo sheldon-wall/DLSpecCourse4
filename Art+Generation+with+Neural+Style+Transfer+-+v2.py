@@ -369,8 +369,8 @@ for each_content in content_files_list:
         alpha = 10
         beta = 40
 
-        style_dir, _ = each_style.split('.')
-        save_dir = os.path.join(top_dir, style_dir)
+        style_name, _ = each_style.split('.')
+        save_dir = os.path.join(top_dir, style_name)
         os.makedirs(save_dir, exist_ok=True)
 
         # generate a new transfer image for all the parameter combinations
